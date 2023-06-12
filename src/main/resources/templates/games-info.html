@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>КУРСОВОЙ ПРОЕКТ</title>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/games-info.css}" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Winner</th>
+        <th>Timestamp</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="game : ${gameInfos}">
+        <td th:text="${game.id}"></td>
+        <td th:text="${game.winner}"></td>
+        <td th:text="${game.timestamp}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<form th:action="@{/index}" method="get">
+    <input type="submit" value="Играть!" class="button"/>
+</form>
+
+
+</body>
+</html>
